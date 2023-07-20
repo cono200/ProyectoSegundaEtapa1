@@ -29,6 +29,15 @@ namespace Proyeto.Controllers
             return View();
         }
 
+        public IActionResult HistorialAcademico()
+        {
+            return View();
+        }
+        public IActionResult ProductoAcademico()
+        {
+            return View();
+        }
+
 
 
 
