@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Proyeto.Models.Autor>
+
+@{
+    ViewData["Title"] = "Datos Personales";
+}
+<link rel="stylesheet" href='~/css/StyleSheet1.css' />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href='~/css/footerFelcidades.css' />
+
+
+<h1>Datos Personales</h1>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Nombre) @Html.DisplayFor(modelItem => item.ApePaterno)</h5>
+                    <p class="card-text">
+                        <strong>Ape Materno:</strong> @Html.DisplayFor(modelItem => item.ApeMaterno)<br />
+                        <strong>Matricula:</strong> @Html.DisplayFor(modelItem => item.Matricula)<br />
+                        <strong>Num Empleado:</strong> @Html.DisplayFor(modelItem => item.NumEmpleado)<br />
+                        <strong>Tipo Cuenta:</strong> @Html.DisplayFor(modelItem => item.TipoCuenta)<br />
+                        <strong>Num Telefono:</strong> @Html.DisplayFor(modelItem => item.NumTelefono)<br />
+                        <strong>Fecha Naci:</strong> @Html.DisplayFor(modelItem => item.FechaNaci)<br />
+                        <strong>Cuerpo Academico:</strong> @Html.DisplayFor(modelItem => item.CuerpoAcademico)<br />
+                        <strong>Area Estudios:</strong> @Html.DisplayFor(modelItem => item.AreaEstudios)<br />
+                        <strong>Nivel Estudios:</strong> @Html.DisplayFor(modelItem => item.IdNivelEstudios1Navigation.NivelEstudiosId)
+                    </p>
+                    <div class="d-grid gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.IdAutor" class="btn btn-info">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdAutor" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
